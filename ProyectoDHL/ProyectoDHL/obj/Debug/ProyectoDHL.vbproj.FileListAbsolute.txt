@@ -1,0 +1,17 @@
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\bin\Debug\ProyectoDHL.exe.config
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\bin\Debug\ProyectoDHL.exe
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\bin\Debug\ProyectoDHL.pdb
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\bin\Debug\ProyectoDHL.xml
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.vbprojAssemblyReference.cache
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.Resources.resources
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.vbproj.GenerateResource.cache
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.vbproj.CoreCompileInputs.cache
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.exe
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.xml
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.pdb
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.MainForm.resources
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.frmAbout.resources
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.frmStart.resources
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.tableFormEmployees.resources
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.tableFormConsumers.resources
+C:\Users\nancy\Downloads\Proyecto_DHL\ProyectoDHL\ProyectoDHL\obj\Debug\ProyectoDHL.detailsFormEmployee.resources
