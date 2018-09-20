@@ -95,4 +95,8 @@ Public Class MainForm
     Public Sub refreshEmployeesData()
         openFormInPanel(New tableFormEmployees)
     End Sub
+
+    Public Sub refreshConsumersData()
+        openFormInPanel(New tableFormConsumers)
+    End Sub
 End Class

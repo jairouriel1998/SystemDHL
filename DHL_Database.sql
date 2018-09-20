@@ -258,18 +258,6 @@ create procedure sp_sEmpleados as select
 from dbo.Personas P inner join dbo.Empleados E on E.id_persona = P.id_persona order by E.id_empleado asc
 go
 
-create procedure sp_sEmpleadosComplete as select
-	P.id_persona,
-	E.id_empleado,
-	P.nombre,
-	P.apellido,
-	P.identidad,
-	P.telefono,
-	P.email,
-	E.cargo
-from dbo.Personas P inner join dbo.Empleados E on E.id_persona = P.id_persona order by E.id_empleado asc
-go
-
 create procedure sp_sArticulos as select
 	A.id_articulo,
 	A.descripcion,
@@ -1068,8 +1056,10 @@ go
 exec sp_iPersonas "Manuel Alejandro", "Gamez Montoya", "0512-1989-55447","97721848","manuelito28@gmail.com"
 exec sp_iPersonas "Ana Lourdes", "Urrea Mansur", "0512-1988-54547","99663322","anita@gmail.com"
 exec sp_iPersonas "Mauricio Eliseo", "Hernandez Mendez", "0801-1995-02616","95487844","luis@gmail.com"
+exec sp_iPersonas "Alex Roberto", "Tejeda Membreño", "0809-1534-59898","95654554","alexitopapu@gmail.com"
 
 exec sp_iClientes 1,"Col: Loarque"
+exec sp_iClientes 4,"Col: Arturo Quezada"
 
 exec sp_iEmpleados 2,"Asesor","anitaurrea1234","1234"
 exec sp_iEmpleados 3,"Asesor","hernandez123","h1234"
@@ -1079,5 +1069,3 @@ exec sp_iArticulos "Mauser KAR-37", "Alemania", 0,0,0,"Metal"
 
 exec sp_sPersonas
 exec sp_sArticulos
-
-exec sp_ultimaPersona

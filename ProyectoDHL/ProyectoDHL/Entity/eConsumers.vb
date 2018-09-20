@@ -1,4 +1,4 @@
-﻿Public Class eConsumersvb
+﻿Public Class eConsumers
     Dim id_persona As Integer
     Dim nombre, apellido, identidad, telefono, email As String
     Dim id_cliente As Integer

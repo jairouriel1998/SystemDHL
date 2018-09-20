@@ -28,6 +28,17 @@
         Catch evento As Exception
             MsgBox(evento.Message)
         End Try
+        If tabla.Rows.Count = 0 Then
+            Dim emptyDataTable As New DataTable
+            emptyDataTable.Columns.Add("dataEmpty")
+            Dim emptyRow As DataRow = emptyDataTable.NewRow()
+            emptyRow("dataEmpty") = "No hay datos"
+            emptyDataTable.Rows.Add(emptyRow)
+            datalistEmployees.DataSource = emptyDataTable
+            btnDeleteEmployee.Enabled = False
+            btnEditEmployee.Enabled = False
+            btnViewDetailsEmployee.Enabled = False
+        End If
     End Sub
 
     Private Sub btnViewDetailsEmployee_Click(sender As Object, e As EventArgs) Handles btnViewDetailsEmployee.Click
@@ -51,16 +62,16 @@
     End Function
 
     Private Sub btnAddNewEmployee_Click(sender As Object, e As EventArgs) Handles btnAddNewEmployee.Click
-        Dim detailsEmpleado = New detailsFormEmployee
-        detailsEmpleado.prepareForm(True, False, False)
-        detailsEmpleado.Show()
+        Dim detailsEmployee = New detailsFormEmployee
+        detailsEmployee.prepareForm(True, False, False)
+        detailsEmployee.Show()
     End Sub
 
     Private Sub btnEditEmployee_Click(sender As Object, e As EventArgs) Handles btnEditEmployee.Click
-        Dim detailsEmpleado = New detailsFormEmployee
-        detailsEmpleado.prepareForm(False, True, False)
-        detailsEmpleado.reciveData(sendData())
-        detailsEmpleado.Show()
+        Dim detailsEmployee = New detailsFormEmployee
+        detailsEmployee.prepareForm(False, True, False)
+        detailsEmployee.reciveData(sendData())
+        detailsEmployee.Show()
     End Sub
 
     Private Sub btnDeleteEmployee_Click(sender As Object, e As EventArgs) Handles btnDeleteEmployee.Click

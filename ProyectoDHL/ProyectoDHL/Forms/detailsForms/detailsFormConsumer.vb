@@ -1,7 +1,8 @@
 ﻿Imports System.Runtime.InteropServices
-Public Class detailsFormEmployee
-    Dim newEmployee, editEmployee, viewEmployee As Boolean
-    Dim person_id, employee_id As Integer
+
+Public Class detailsFormConsumer
+    Dim newConsumer, editConsumer, viewConsumer As Boolean
+    Dim person_id, consumer_id As Integer
 
 
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
@@ -13,20 +14,20 @@ Public Class detailsFormEmployee
     End Sub
 
     Public Sub prepareForm(newData As Boolean, editData As Boolean, viewData As Boolean)
-        newEmployee = newData
-        editEmployee = editData
-        viewEmployee = viewData
+        newConsumer = newData
+        editConsumer = editData
+        viewConsumer = viewData
         prepareButtons()
         prepareTextBox()
     End Sub
 
     Private Sub prepareButtons()
-        If newEmployee Or editEmployee Then
+        If newConsumer Or editConsumer Then
             btnSave.Visible = True
             btnClear.Visible = True
             btnCancel.Visible = True
             btnClose.Visible = False
-        ElseIf viewEmployee Then
+        ElseIf viewConsumer Then
             btnSave.Visible = False
             btnClear.Visible = False
             btnCancel.Visible = False
@@ -35,53 +36,53 @@ Public Class detailsFormEmployee
     End Sub
 
     Private Sub prepareTextBox()
-        If newEmployee Or editEmployee Then
-            txtEmployeeName.Enabled = True
-            txtEmployeeLastName.Enabled = True
-            txtEmployeeIdCard.Enabled = True
-            txtEmployeePhone.Enabled = True
-            txtEmployeePhone.Enabled = True
-            txtEmployeeEmail.Enabled = True
-            txtEmployeePosition.Enabled = True
-        ElseIf viewEmployee Then
-            txtEmployeeName.Enabled = False
-            txtEmployeeLastName.Enabled = False
-            txtEmployeeIdCard.Enabled = False
-            txtEmployeePhone.Enabled = False
-            txtEmployeePhone.Enabled = False
-            txtEmployeeEmail.Enabled = False
-            txtEmployeePosition.Enabled = False
+        If newConsumer Or editConsumer Then
+            txtConsumerName.Enabled = True
+            txtConsumerLastName.Enabled = True
+            txtConsumerIdCard.Enabled = True
+            txtConsumerPhone.Enabled = True
+            txtConsumerPhone.Enabled = True
+            txtConsumerEmail.Enabled = True
+            txtConsumerAddress.Enabled = True
+        ElseIf viewConsumer Then
+            txtConsumerName.Enabled = False
+            txtConsumerLastName.Enabled = False
+            txtConsumerIdCard.Enabled = False
+            txtConsumerPhone.Enabled = False
+            txtConsumerPhone.Enabled = False
+            txtConsumerEmail.Enabled = False
+            txtConsumerAddress.Enabled = False
         End If
     End Sub
 
 
-    Public Sub reciveData(employeeData As eEmployees)
-        person_id = employeeData.Id_persona1
-        employee_id = employeeData.Id_empleado1
-        txtEmployeeName.Text = employeeData.Nombre1
-        txtEmployeeLastName.Text = employeeData.Apellido1
-        txtEmployeeIdCard.Text = employeeData.Identidad1
-        txtEmployeePhone.Text = employeeData.Telefono1
-        txtEmployeeEmail.Text = employeeData.Email1
-        txtEmployeePosition.Text = employeeData.Cargo1
+    Public Sub reciveData(consumerData As eConsumers)
+        person_id = consumerData.Id_persona1
+        consumer_id = consumerData.Id_cliente1
+        txtConsumerName.Text = consumerData.Nombre1
+        txtConsumerLastName.Text = consumerData.Apellido1
+        txtConsumerIdCard.Text = consumerData.Identidad1
+        txtConsumerPhone.Text = consumerData.Telefono1
+        txtConsumerEmail.Text = consumerData.Email1
+        txtConsumerAddress.Text = consumerData.Direccion1
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        If newEmployee Then
-            If txtEmployeeName.Text <> "" And txtEmployeeLastName.Text <> "" And
-                txtEmployeeIdCard.Text <> "" And txtEmployeePhone.Text <> "" And
-                txtEmployeeEmail.Text <> "" And txtEmployeePosition.Text <> "" Then
+        If newConsumer Then
+            If txtConsumerName.Text <> "" And txtConsumerLastName.Text <> "" And
+                txtConsumerIdCard.Text <> "" And txtConsumerPhone.Text <> "" And
+                txtConsumerEmail.Text <> "" And txtConsumerAddress.Text <> "" Then
                 Try
-                    Dim tablaDatos As New eEmployees
-                    Dim funciones As New dEmployees
-                    tablaDatos.Nombre1 = txtEmployeeName.Text
-                    tablaDatos.Apellido1 = txtEmployeeLastName.Text
-                    tablaDatos.Identidad1 = txtEmployeeIdCard.Text
-                    tablaDatos.Telefono1 = txtEmployeePhone.Text
-                    tablaDatos.Email1 = txtEmployeeEmail.Text
-                    tablaDatos.Cargo1 = txtEmployeePosition.Text
+                    Dim tablaDatos As New eConsumers
+                    Dim funciones As New dConsumers
+                    tablaDatos.Nombre1 = txtConsumerName.Text
+                    tablaDatos.Apellido1 = txtConsumerLastName.Text
+                    tablaDatos.Identidad1 = txtConsumerIdCard.Text
+                    tablaDatos.Telefono1 = txtConsumerPhone.Text
+                    tablaDatos.Email1 = txtConsumerEmail.Text
+                    tablaDatos.Direccion1 = txtConsumerAddress.Text
                     If funciones.insertar(tablaDatos) Then
-                        MessageBox.Show("Empleado registrado exitosamente",
+                        MessageBox.Show("Cliente registrado exitosamente",
                                         "Guardando registro", MessageBoxButtons.OK,
                                         MessageBoxIcon.Information)
                     Else
@@ -97,21 +98,21 @@ Public Class detailsFormEmployee
                                 "Guardando registro", MessageBoxButtons.OK,
                                 MessageBoxIcon.Information)
             End If
-        ElseIf editEmployee Then
-            If txtEmployeeName.Text <> "" And txtEmployeeLastName.Text <> "" And
-                txtEmployeeIdCard.Text <> "" And txtEmployeePhone.Text <> "" And
-                txtEmployeeEmail.Text <> "" And txtEmployeePosition.Text <> "" Then
+        ElseIf editConsumer Then
+            If txtConsumerName.Text <> "" And txtConsumerLastName.Text <> "" And
+                txtConsumerIdCard.Text <> "" And txtConsumerPhone.Text <> "" And
+                txtConsumerEmail.Text <> "" And txtConsumerAddress.Text <> "" Then
                 Try
-                    Dim tablaDatos As New eEmployees
-                    Dim funciones As New dEmployees
+                    Dim tablaDatos As New eConsumers
+                    Dim funciones As New dConsumers
                     tablaDatos.Id_persona1 = person_id
-                    tablaDatos.Id_empleado1 = employee_id
-                    tablaDatos.Nombre1 = txtEmployeeName.Text
-                    tablaDatos.Apellido1 = txtEmployeeLastName.Text
-                    tablaDatos.Identidad1 = txtEmployeeIdCard.Text
-                    tablaDatos.Telefono1 = txtEmployeePhone.Text
-                    tablaDatos.Email1 = txtEmployeeEmail.Text
-                    tablaDatos.Cargo1 = txtEmployeePosition.Text
+                    tablaDatos.Id_cliente1 = consumer_id
+                    tablaDatos.Nombre1 = txtConsumerName.Text
+                    tablaDatos.Apellido1 = txtConsumerLastName.Text
+                    tablaDatos.Identidad1 = txtConsumerIdCard.Text
+                    tablaDatos.Telefono1 = txtConsumerPhone.Text
+                    tablaDatos.Email1 = txtConsumerEmail.Text
+                    tablaDatos.Direccion1 = txtConsumerAddress.Text
                     If funciones.actualizar(tablaDatos) Then
                         MessageBox.Show("Cambios guardados exitosamente",
                                         "Guardando registro", MessageBoxButtons.OK,
@@ -131,7 +132,7 @@ Public Class detailsFormEmployee
             End If
         End If
         Me.Close()
-        MainForm.refreshEmployeesData()
+        MainForm.refreshConsumersData()
     End Sub
 
     Private Sub Label1_MouseMove(sender As Object, e As MouseEventArgs) Handles Label1.MouseMove
@@ -148,12 +149,11 @@ Public Class detailsFormEmployee
     End Sub
 
     Private Sub btnClear_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        txtEmployeeName.Text = ""
-        txtEmployeeLastName.Text = ""
-        txtEmployeeIdCard.Text = ""
-        txtEmployeePhone.Text = ""
-        txtEmployeeEmail.Text = ""
-        txtEmployeePosition.Text = ""
+        txtConsumerName.Text = ""
+        txtConsumerLastName.Text = ""
+        txtConsumerIdCard.Text = ""
+        txtConsumerPhone.Text = ""
+        txtConsumerEmail.Text = ""
+        txtConsumerAddress.Text = ""
     End Sub
-
 End Class
